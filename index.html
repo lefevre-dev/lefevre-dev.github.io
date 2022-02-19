@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin-left: 10em;
+  margin-right: 10em;
+}
+p{
+    text-align: justify;
+    text-justify: distribute;
+}
+</style>
+</head>
+<body>
+
 
 <h1>
     Louis Lefevre
@@ -6,63 +23,228 @@
 <h2>
     Liste des projets
 </h2>
+<article>
+    <h3>
+        Quiz builder
+    </h3>
 
-<h3>
-    Quiz World
-</h3>
-<img src="Images/quiz_builder.PNG" width="500em">
+    <img src="Images/quiz_builder.PNG" width="500em">
 
+    <p>
+        Dans l’objectif de créer une application android de quiz, il faut pour commencer avoir une base de données contentant les informations sur lesquelles les questions vont porter. L’application Quiz builder est donc une interface graphique qui permet de contruire cette base de données. La base est constituée d’une seule table contenant la liste des éléments du quiz. Quiz builder permet de gérer plusieurs projets différents. Pour chaque projet sont défini la liste des champs (nom et type) de la table. On peut ajouter des nouvelles entrées à la table et les visualiser sur le côté, pratique notamment pour les images.
+        <div>
+            Outils:
+            <ul>
+                <li>
+                    PyQt
+                </li>
+                <li>
+                    SQLite
+                </li>
+            </ul>
+        </div>
+    </p>
+</article>
 <h3>
     Youtube manager
 </h3>
-<img src="Images/youtube_manager.PNG" width="500em">
 <img src="Images/youtube_manager2.PNG" width="500em">
-<img src="Images/youtube_manager3.PNG" width="500em">
-<img src="Images/youtube_manager4.PNG" width="500em">
-<img src="Images/youtube_manager5.PNG" width="500em">
+<p>
+    L’application Youtube manager est une interface graphique qui permet de s’abonner à des chaines youtube, trier ses abonnements par catégories et téléchager des vidéo youtube. Pour commencer on importe une liste d’abonnement depuis son compte google ou un export généré depuis l’application. Ensuite on tri les chaines youtube par catégories, on peut créer une arborescence personnalisé de catégorie. En cliquant sur les chaines la liste des dernières vidéo s’affiche sur le côté, on a la possibilité de les ouvrir dans un navigateur pour les regarder ou de les télécharger. On ajoute aussi des nouveaux abonnement en passant par une fenêtre de recherche. On télécharge aussi des vidéos en copiant l’url dans la fenêtre de téléchargement.
+    <div>
+        Outils:
+        <ul>
+            <li>
+                PyQt
+            </li>
+            <li>
+                SQLite
+            </li>
+            <li>
+                Api Youtube v3
+            </li>
+        </ul>
+    </div>
+</p>
+<img src="Images/youtube_manager3.PNG" width="250em">
+<img src="Images/youtube_manager4.PNG" width="250em">
+<img src="Images/youtube_manager5.PNG" width="250em">
 
 <h3>
     Labyrinth en 3D
 </h3>
 <img src="Images/laby_3d.PNG" width="500em">
+<p>
+    Ce programme python génére un fichier 3D .stl, qui est ensuite imprimable par une imprimante 3D. Ensuite on glisse une petite bille métalique à l’intérieur et on essaye de la faire ressortir de l’autre côté. L’image est une vue en coupe le labyrinthe est totalement caché il faut donc retrouver le chemin à l’aveugle.
+</p>
 
 <h3>
     Flask
 </h3>
 <img src="Images/flask_kems.PNG" width="500em">
 <img src="Images/flask_kems2.PNG" width="500em">
+<p>
+    Ce programme est le premier site que j’ai réalisé avec le framework python Flask. Ce projet n’est pas du tout terminé. L’objectif était de créer un jeu  multijoueur en utilisant le système de socket. Ce qui à été réalisé sont les étapes de création d’une partie et d’accés à une partie. Les joueurs choisissent leur équipe et indiquent s’ils sont prêt. Lorsque tout le monde est prêt la partie est lancé.
+</p>
+<div>
+    Outils:
+    <ul>
+        <li>
+            Falsk
+        </li>
+        <li>
+            MySql
+        </li>
+        <li>
+            Bootstrap
+        </li>
+    </ul>
+</div>
 
 <h3>
     Découper les video d’HugoDecrypt
 </h3>
 <img src="Images/bot_hugo.gif" width="500em">
+<p>
+    Hugo Décrypte est un youtubeur qui tout les jours donne les principales informations d’actualités. Ses vidéos sont découpées en plusieurs sujets dont le titre est indiqué dans un bandeau en haut à gauche. Avant que n’apparaissent le système de chapitrage (qui affiche les sections de la vidéo dans la bar de progression) les gens donnaient dans les commentaires les timecodes de chaque sections de la vidéo. L’idée est d’automatiser la génération d’un commentaire avec les timecodes de chaque section à la publication de la vidéo. 
+    <ul>
+        <li>
+            Le programme scrute donc la publication d’une nouvelle vidéo en utilisant l’api youtube
+        </li>
+        <li>
+            La vidéo est téléchargé pour être analysé
+        </li>
+        <li>
+            La vidéo est échantillonnée pour diminuer le nombre d’image à analyser
+        </li>
+        <li>
+            La partie de l’image contenant le titre de la section est extrait pour ensuite être binarisé et filtré
+        </li>
+        <li>
+            Le text est détecté en utilsant le progamme Pytesseract
+        </li>
+    </ul>
+    Ensuite il reste à générer la liste des sections avec les timecodes en face et de publier le commentaire sous la vidéo.
+</p>
+<div>
+    Outils:
+    <ul>
+        <li>
+            Api Youtube v3
+        </li>
+        <li>
+            Pytube
+        </li>
+        <li>
+            Pytesseract
+        </li>
+    </ul>
+</div>
 
 <h3>
     Le kems 
 </h3>
-<img src="Images/kems_serveur.PNG" width="500em">
 <img src="Images/kems_3.gif" width="500em">
+<img src="Images/kems_serveur.PNG" width="500em">
+
+<p>
+    Ce jeux reprend le principe d’un jeu, le kems. Les rêgles sont les suivantes :
+    <ul>
+        <li>Il y a un nombre paire de joureurs avec 4 cartes chacun</li>
+        <li>Les joueurs en face l’un de l’autre sont coéquipiés</li>
+        <li>Il faut échanger ses cartes avec les 4 cartes du centre dans l’objectif d’avoir 4 cartes de même valeur (c’est ce qu’on appel un kems)</li>
+        <li>Si plus personne n’échange de carte elles sont remplacées</li>
+        <li>Lorsqu’un joueur a un kems il doit le faire comprendre à son coéquipié sans que les autres ne le devine</li>
+        <li>Si un joueur pense que son coéquipié a un kems il dit "Kems !" voir "Double kems" s’il a aussi lui même un kems</li>
+        <li>Si un joueur pense qu’un adversaire a un kems il annonce "Contre kems !"</li>
+    </ul>
+    Dans cette version informatique du kems les joueurs communiquent par visio conférences. Le programme est composé de plusieurs clients et d’un serveur central. Les communications sont faite en passant par des sockets.
+</p>
+<div>
+    Outils:
+    <ul>
+        <li>
+            Sockets
+        </li>
+        <li>
+            Tkinter
+        </li>
+    </ul>
+</div>
 
 <h3>
     Les commentaires youtube
 </h3>
 <img src="Images/Comment_viewer.PNG" width="700em">
+<p>
+    Ce programme permet de téléchager les commentaires youtube sous les vidéos puis de les parcourir pour sauvegarder ceux qui retiennent l’attention. Les trois colonnes sur la droites permettent de trier par chaine youtube, par vidéo et par conversation. À gauche on peu voir la conversation selectinnée. En dessous se trouve la liste des conversation sauvegardées.
+</p>
+<div>
+    Outils:
+    <ul>
+        <li>
+            PyQt
+        </li>
+        <li>
+            Youtube API
+        </li>
+        <li>
+            youtube-comment-downloader
+        </li>
+    </ul>
+</div>
 
 <h3>
     Quiz départements
 </h3>
-
 <img src="Images/quiz_departements.png" width="200em">
+<p>
+    Ce projet est une application android qui permet de réviser les numéros des départements de france métropolitaine. C’est un quiz qui demande le numéro pour un département donnée, le nom et l’enplacement géographique sont affichés. Si une erreur est faite alors on doit tout recommencer, le but est de pouvoir répondre correctement pour les 96 numéros d’une seule traite. 
+</p>
+
+<div>
+    Outils:
+    <ul>
+        <li>
+            Andoid
+        </li>
+    </ul>
+</div>
+
 
 <h3>
     25case
 </h3>
 <img src="Images/25case.png" width="200em">
+<p>
+    
+</p>
+
+<div>
+    Outils:
+    <ul>
+        <li>
+            Andoid
+        </li>
+    </ul>
+</div>
 
 <h3>
     Maxicase
 </h3>
 <img src="Images/maxicase.png" width="200em">
+<p>
+
+</p>
+
+<div>
+    Outils:
+    <ul>
+        <li>
+            Andoid
+        </li>
+    </ul>
+</div>
 
 <h3>
     Travel Star
@@ -169,3 +351,7 @@
 </h3>
 
 <img src="Images/2048_anim.gif" width="350em">
+
+
+</body>
+</html>
