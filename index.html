@@ -1,19 +1,108 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin-left: 10em;
-  margin-right: 10em;
-}
-p{
-    text-align: justify;
-    text-justify: distribute;
-}
-</style>
-</head>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin-left: 10em;
+                margin-right: 10em;
+            }
+            p{
+                text-align: justify;
+                text-justify: distribute;
+            }
+            .popImg:hover{
+                opacity: 0.7;
+            }
+            .popImg{
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            }
+            /* Modal Content (Image) */
+            .modal-content {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+            }
+
+            /* Caption of Modal Image (Image Text) - Same Width as the Image */
+            #caption {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+                text-align: center;
+                color: #ccc;
+                padding: 10px 0;
+                height: 150px;
+            }
+
+            /* Add Animation - Zoom in the Modal */
+            .modal-content, #caption {
+                animation-name: zoom;
+                animation-duration: 0.6s;
+            }
+
+            @keyframes zoom {
+                from {transform:scale(0)}
+                to {transform:scale(1)}
+            }
+
+            /* The Close Button */
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            /* 100% Image Width on Smaller Screens */
+            @media only screen and (max-width: 700px){
+                .modal-content {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
 <body>
+
+<!-- The Modal -->
+<div id="imgModal" class="modal" style="display: none;">
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
+
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="img01">
+
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+</div>
 
 
 <h1>
@@ -28,10 +117,10 @@ p{
         Quiz builder
     </h3>
 
-    <img src="Images/quiz_builder.PNG" width="500em">
+    <img src="Images/quiz_builder.PNG" width="500em" class="popImg">
 
     <p>
-        Dans l’objectif de créer une application android de quiz, il faut pour commencer avoir une base de données contentant les informations sur lesquelles les questions vont porter. L’application Quiz builder est donc une interface graphique qui permet de contruire cette base de données. La base est constituée d’une seule table contenant la liste des éléments du quiz. Quiz builder permet de gérer plusieurs projets différents. Pour chaque projet sont défini la liste des champs (nom et type) de la table. On peut ajouter des nouvelles entrées à la table et les visualiser sur le côté, pratique notamment pour les images.
+        Dans l’objectif de créer une application android de quiz, il faut pour commencer avoir une base de données contenant les informations sur lesquelles les questions vont porter. L’application Quiz builder est donc une interface graphique qui permet de construire cette base de données. La base est constituée d’une seule table contenant la liste des éléments du quiz. Quiz builder permet de gérer plusieurs projets différents. Pour chaque projet sont défini la liste des champs (nom et type) de la table. On peut ajouter des nouvelles entrées à la table et les visualiser sur le côté, pratique notamment pour les images.
         <div>
             Outils:
             <ul>
@@ -48,9 +137,9 @@ p{
 <h3>
     Youtube manager
 </h3>
-<img src="Images/youtube_manager2.PNG" width="500em">
+<img src="Images/youtube_manager2.PNG" width="500em" class="popImg">
 <p>
-    L’application Youtube manager est une interface graphique qui permet de s’abonner à des chaines youtube, trier ses abonnements par catégories et téléchager des vidéo youtube. Pour commencer on importe une liste d’abonnement depuis son compte google ou un export généré depuis l’application. Ensuite on tri les chaines youtube par catégories, on peut créer une arborescence personnalisé de catégorie. En cliquant sur les chaines la liste des dernières vidéo s’affiche sur le côté, on a la possibilité de les ouvrir dans un navigateur pour les regarder ou de les télécharger. On ajoute aussi des nouveaux abonnement en passant par une fenêtre de recherche. On télécharge aussi des vidéos en copiant l’url dans la fenêtre de téléchargement.
+    L’application Youtube manager est une interface graphique qui permet de s’abonner à des chaines youtube, trier ses abonnements par catégories et télécharger des vidéos youtube. Pour commencer on importe une liste d’abonnement depuis son compte google ou un export généré depuis l’application. Ensuite on tri les chaines youtube par catégories, on peut créer une arborescence personnalisé de catégorie. En cliquant sur les chaines la liste des dernières vidéo s’affiche sur le côté, on a la possibilité de les ouvrir dans un navigateur pour les regarder ou les télécharger. On ajoute aussi des nouveaux abonnement en passant par une fenêtre de recherche. On télécharge aussi des vidéos en copiant l’url dans la fenêtre de téléchargement.
     <div>
         Outils:
         <ul>
@@ -66,23 +155,23 @@ p{
         </ul>
     </div>
 </p>
-<img src="Images/youtube_manager3.PNG" width="250em">
-<img src="Images/youtube_manager4.PNG" width="250em">
-<img src="Images/youtube_manager5.PNG" width="250em">
+<img src="Images/youtube_manager3.PNG" width="250em" class="popImg">
+<img src="Images/youtube_manager4.PNG" width="250em" class="popImg">
+<img src="Images/youtube_manager5.PNG" width="250em" class="popImg">
 
 <h3>
     Labyrinth en 3D
 </h3>
-<img src="Images/laby_3d.PNG" width="500em">
+<img src="Images/laby_3d.PNG" width="500em" class="popImg">
 <p>
-    Ce programme python génére un fichier 3D .stl, qui est ensuite imprimable par une imprimante 3D. Ensuite on glisse une petite bille métalique à l’intérieur et on essaye de la faire ressortir de l’autre côté. L’image est une vue en coupe le labyrinthe est totalement caché il faut donc retrouver le chemin à l’aveugle.
+    Ce programme python génére un fichier 3D .stl, qui est ensuite imprimable par une imprimante 3D. Ensuite on glisse une petite bille métalique à l’intérieur et on essaye de la faire ressortir de l’autre côté. L’image est une vue en coupe, le labyrinthe est totalement caché il faut donc retrouver le chemin à l’aveugle.
 </p>
 
 <h3>
     Flask
 </h3>
-<img src="Images/flask_kems.PNG" width="500em">
-<img src="Images/flask_kems2.PNG" width="500em">
+<img src="Images/flask_kems.PNG" width="500em" class="popImg">
+<img src="Images/flask_kems2.PNG" width="500em" class="popImg">
 <p>
     Ce programme est le premier site que j’ai réalisé avec le framework python Flask. Ce projet n’est pas du tout terminé. L’objectif était de créer un jeu  multijoueur en utilisant le système de socket. Ce qui à été réalisé sont les étapes de création d’une partie et d’accés à une partie. Les joueurs choisissent leur équipe et indiquent s’ils sont prêt. Lorsque tout le monde est prêt la partie est lancé.
 </p>
@@ -104,7 +193,7 @@ p{
 <h3>
     Découper les video d’HugoDecrypt
 </h3>
-<img src="Images/bot_hugo.gif" width="500em">
+<img src="Images/bot_hugo.gif" width="500em" class="popImg">
 <p>
     Hugo Décrypte est un youtubeur qui tout les jours donne les principales informations d’actualités. Ses vidéos sont découpées en plusieurs sujets dont le titre est indiqué dans un bandeau en haut à gauche. Avant que n’apparaissent le système de chapitrage (qui affiche les sections de la vidéo dans la bar de progression) les gens donnaient dans les commentaires les timecodes de chaque sections de la vidéo. L’idée est d’automatiser la génération d’un commentaire avec les timecodes de chaque section à la publication de la vidéo. 
     <ul>
@@ -124,7 +213,7 @@ p{
             Le text est détecté en utilsant le progamme Pytesseract
         </li>
     </ul>
-    Ensuite il reste à générer la liste des sections avec les timecodes en face et de publier le commentaire sous la vidéo.
+    Ensuite il reste à générer la liste des sections avec les timecodes en face et à publier le commentaire sous la vidéo.
 </p>
 <div>
     Outils:
@@ -144,8 +233,8 @@ p{
 <h3>
     Le kems 
 </h3>
-<img src="Images/kems_3.gif" width="500em">
-<img src="Images/kems_serveur.PNG" width="500em">
+<img src="Images/kems_3.gif" width="500em" class="popImg">
+<img src="Images/kems_serveur.PNG" width="500em" class="popImg">
 
 <p>
     Ce jeux reprend le principe d’un jeu, le kems. Les rêgles sont les suivantes :
@@ -175,9 +264,9 @@ p{
 <h3>
     Les commentaires youtube
 </h3>
-<img src="Images/Comment_viewer.PNG" width="700em">
+<img src="Images/Comment_viewer.PNG" width="700em" class="popImg">
 <p>
-    Ce programme permet de téléchager les commentaires youtube sous les vidéos puis de les parcourir pour sauvegarder ceux qui retiennent l’attention. Les trois colonnes sur la droites permettent de trier par chaine youtube, par vidéo et par conversation. À gauche on peu voir la conversation selectinnée. En dessous se trouve la liste des conversation sauvegardées.
+    Ce programme permet de téléchager les commentaires youtube sous les vidéos puis de les parcourir pour sauvegarder ceux qui retiennent l’attention. Les trois colonnes sur la droites permettent de trier par chaine youtube, par vidéo et par conversation. À gauche on peu voir la conversation selectionnées. En dessous se trouve la liste des conversation sauvegardées.
 </p>
 <div>
     Outils:
@@ -197,9 +286,9 @@ p{
 <h3>
     Quiz départements
 </h3>
-<img src="Images/quiz_departements.png" width="200em">
+<img src="Images/quiz_departements.png" width="200em" class="popImg">
 <p>
-    Ce projet est une application android qui permet de réviser les numéros des départements de france métropolitaine. C’est un quiz qui demande le numéro pour un département donnée, le nom et l’enplacement géographique sont affichés. Si une erreur est faite alors on doit tout recommencer, le but est de pouvoir répondre correctement pour les 96 numéros d’une seule traite. 
+    Ce projet est une application android qui permet de réviser les numéros des départements de france métropolitaine. C’est un quiz qui demande le numéro pour un département donnée, le nom et l’emplacement géographique sont affichés. Si une erreur est faite alors on doit tout recommencer, le but est de pouvoir répondre correctement pour les 96 numéros d’une seule traite. 
 </p>
 
 <div>
@@ -215,7 +304,7 @@ p{
 <h3>
     25case
 </h3>
-<img src="Images/25case.png" width="200em">
+<img src="Images/25case.png" width="200em" class="popImg">
 <p>
     
 </p>
@@ -232,7 +321,7 @@ p{
 <h3>
     Maxicase
 </h3>
-<img src="Images/maxicase.png" width="200em">
+<img src="Images/maxicase.png" width="200em" class="popImg">
 <p>
 
 </p>
@@ -250,99 +339,99 @@ p{
     Travel Star
 </h3>
 
-<img src="Images/travel_star.gif" width="350em"/>
+<img src="Images/travel_star.gif" width="350em" class="popImg"/>
 
 <h3>
     Tronio
 </h3>
 
-<img src="Images/tronio_game.gif" width="400em"/>
+<img src="Images/tronio_game.gif" width="400em" class="popImg"/>
 
 <h3>
     Labyrinthe
 </h3>
 
-<img src="Images/laby.gif"  width="350em">
-<img src="Images/laby2.gif"  width="500em">
+<img src="Images/laby.gif"  width="350em" class="popImg">
+<img src="Images/laby2.gif"  width="500em" class="popImg">
 
 <h3>
     resolution rubik’s cube
 </h3>
 
-<img src="Images/cube_resolution.gif" width="750em"/>
+<img src="Images/cube_resolution.gif" width="750em" class="popImg"/>
 
 <h3>
     Supermorpion
 </h3>
 
-<img src="Images/supermorpion.gif" width="350em"/>
+<img src="Images/supermorpion.gif" width="350em" class="popImg"/>
 
 
 <h3>
     Le jeu des 4 couleurs
 </h3>
 
-<img src="Images/4couleurs.gif" width="350em"/>
+<img src="Images/4couleurs.gif" width="350em" class="popImg"/>
 
 <h3>
     Automate cellulaire
 </h3>
 
-<img src="Images/auto_cell.gif" width="350em"/>
+<img src="Images/auto_cell.gif" width="350em" class="popImg"/>
 
 <h3>
     Le jeux de la vie
 </h3>
 
-<img src="Images/conway.gif"  width="350em">
-<img src="Images/conway2.gif"  width="350em">
+<img src="Images/conway.gif"  width="350em" class="popImg">
+<img src="Images/conway2.gif"  width="350em" class="popImg">
 
 <h3>
     jeu de la pizza
 </h3>
 
-<img src="Images/pizza.gif" width="350em"/>
+<img src="Images/pizza.gif" width="350em" class="popImg"/>
 
 <h3>
     Calcul des lentilles
 </h3>
-<img src="Images/lentille.PNG" width="400em"/>
+<img src="Images/lentille.PNG" width="400em" class="popImg"/>
 
 <h3>
     Outil pour calculer l’angle de réfraction
 </h3>
 
-<img src="Images/refraction.gif" width="350em">
+<img src="Images/refraction.gif" width="350em" class="popImg">
 
 <h3>
     Bang
 </h3>
 
-<img src="Images/bang.gif" width="350em"/>
+<img src="Images/bang.gif" width="350em" class="popImg"/>
 
 <h3>
     train
 </h3>
-<img src="Images/train.gif" width="400em"/>
+<img src="Images/train.gif" width="400em" class="popImg"/>
 
 
 <h3>
     Cube timer
 </h3>
 
-<img src="Images/cube_timer.PNG" width="500em"/>
+<img src="Images/cube_timer.PNG" width="500em" class="popImg"/>
 
 
 <h3>
     Gravity
 </h3>
 
-<img src="Images/gravity.gif" width="400em"/>
+<img src="Images/gravity.gif" width="400em" class="popImg"/>
 
 <h3>
     Systeme solaire
 </h3>
-<img src="Images/systeme.gif" width="400em"/>
+<img src="Images/systeme.gif" width="400em" class="popImg"/>
 
 
 
@@ -350,8 +439,36 @@ p{
     2048
 </h3>
 
-<img src="Images/2048_anim.gif" width="350em">
+<img src="Images/2048_anim.gif" width="350em" class="popImg">
 
 
 </body>
+
+<script>
+    // Get the modal
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var images = document.getElementsByClassName("popImg");
+    Array.from(images).forEach(img => {
+        img.onclick = function(){
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            var modal = document.getElementById("imgModal");
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+    });
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        var modal = document.getElementById("imgModal");
+        modal.style.display = "none";
+    } 
+
+    
+</script>
 </html>
