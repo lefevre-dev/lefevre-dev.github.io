@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            body {
-                font-family: Verdana, Tahoma, sans-serif;
-                font-size: large;
-                margin-left: 10%;
-                margin-right: 10%;
-                /*background-color: #becfff;*/
-                --main-bg-color:#F7DBA7;
-                background-color:var(--main-bg-color)
-            }
-            .paragraph{
-                text-align: justify;
-                text-justify: auto;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-                background: #ffffff;
-                color: #251605;
-                filter: drop-shadow(0 0 10px #251605);
-                margin: 0;
-            }
-            .text{
-                padding: 20px;
-                /*text-align: justify;
+
+<head>
+    <style>
+        body {
+            font-family: Verdana, Tahoma, sans-serif;
+            font-size: large;
+            margin-left: 10%;
+            margin-right: 10%;
+            /*background-color: #becfff;*/
+            --main-bg-color: #F7DBA7;
+            background-color: var(--main-bg-color)
+        }
+
+        .paragraph {
+            text-align: justify;
+            text-justify: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            background: #ffffff;
+            color: #251605;
+            filter: drop-shadow(0 0 10px #251605);
+            margin: 0;
+        }
+
+        .text {
+            padding: 20px;
+            /*text-align: justify;
                 text-justify: auto;
                 border-radius: 10px;
                 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -31,719 +34,929 @@
                 color: #251605;
                 filter: drop-shadow(0 0 10px #251605);
                 margin: 0;*/
+        }
+
+        .popImg:hover {
+            opacity: 0.7;
+        }
+
+        .popImg {
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            filter: drop-shadow(0 0 10px #251605);
+            object-fit: cover;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content (Image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image (Image Text) - Same Width as the Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Add Animation - Zoom in the Modal */
+        .modal-content,
+        #caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
             }
-            .popImg:hover{
-                opacity: 0.7;
+
+            to {
+                transform: scale(1)
             }
-            .popImg{
-                border-radius: 10px;
-                cursor: pointer;
-                transition: 0.3s;
-                filter: drop-shadow(0 0 10px #251605);
-                object-fit: cover;
-            }
-            /* The Modal (background) */
-            .modal {
-                display: none; /* Hidden by default */
-                position: fixed; /* Stay in place */
-                z-index: 1; /* Sit on top */
-                padding-top: 100px; /* Location of the box */
-                left: 0;
-                top: 0;
-                width: 100%; /* Full width */
-                height: 100%; /* Full height */
-                overflow: auto; /* Enable scroll if needed */
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-            }
-            /* Modal Content (Image) */
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
             .modal-content {
-                margin: auto;
-                display: block;
-                width: 80%;
-                max-width: 700px;
+                width: 100%;
+            }
+        }
+
+        .container_h {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .container_v {
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
+        }
+
+        .toolList {
+            margin: 20px;
+        }
+
+        .container_element_1 {
+            width: 10%;
+        }
+
+        .container_element_2 {
+            width: 20%;
+        }
+
+        .container_element_3 {
+            width: 30%;
+        }
+
+        .container_element_4 {
+            width: 40%;
+        }
+
+        .container_element_5 {
+            width: 50%;
+        }
+
+        .container_element_6 {
+            width: 60%;
+        }
+
+        .container_element_7 {
+            width: 70%;
+        }
+
+        .container_element_8 {
+            width: 80%;
+        }
+
+        .container_element_9 {
+            width: 90%;
+        }
+
+        .container_element_10 {
+            width: 100%;
+        }
+
+
+
+
+        @media (max-width: 1100px) {
+            .container_h {
+                flex-direction: column;
             }
 
-            /* Caption of Modal Image (Image Text) - Same Width as the Image */
-            #caption {
-                margin: auto;
-                display: block;
-                width: 80%;
-                max-width: 700px;
-                text-align: center;
-                color: #ccc;
-                padding: 10px 0;
-                height: 150px;
+            .container_element_1 {
+                width: 100%;
             }
 
-            /* Add Animation - Zoom in the Modal */
-            .modal-content, #caption {
-                animation-name: zoom;
-                animation-duration: 0.6s;
+            .container_element_2 {
+                width: 100%;
             }
 
-            @keyframes zoom {
-                from {transform:scale(0)}
-                to {transform:scale(1)}
+            .container_element_3 {
+                width: 100%;
             }
 
-            /* The Close Button */
-            .close {
-                position: absolute;
-                top: 15px;
-                right: 35px;
-                color: #f1f1f1;
-                font-size: 40px;
-                font-weight: bold;
-                transition: 0.3s;
+            .container_element_4 {
+                width: 100%;
             }
 
-            .close:hover,
-            .close:focus {
-                color: #bbb;
-                text-decoration: none;
-                cursor: pointer;
+            .container_element_5 {
+                width: 100%;
             }
 
-            /* 100% Image Width on Smaller Screens */
-            @media only screen and (max-width: 700px){
-                .modal-content {
-                    width: 100%;
-                }
+            .container_element_6 {
+                width: 100%;
             }
-            .container_h{
-                display: flex;
-                flex-direction: row;
-                gap: 30px;
+
+            .container_element_7 {
+                width: 100%;
             }
-            .toolList{
-                margin: 20px;
+
+            .container_element_8 {
+                width: 100%;
             }
-            .container_element{
-                width: 50%;
+
+            .container_element_9 {
+                width: 100%;
             }
-            @media (max-width: 1100px) {
-                .container_h {
-                    flex-direction: column;
-                }
-                .container_element{
-                    width: 100%;
-                }
-            }
-        </style>
-        <script>
-        </script>
-    </head>
+        }
+    </style>
+    <script>
+    </script>
+</head>
+
 <body>
 
-<!-- The Modal -->
-<div id="imgModal" class="modal" style="display: none;">
-    <!-- The Close Button -->
-    <span class="close">&times;</span>
+    <!-- The Modal -->
+    <div id="imgModal" class="modal" style="display: none;">
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
 
-    <!-- Modal Content (The Image) -->
-    <img class="modal-content" id="img01">
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="img01">
 
-    <!-- Modal Caption (Image Text) -->
-    <div id="caption"></div>
-</div>
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+    </div>
 
 
-<h1>
-    Louis Lefevre
-</h1>
+    <h1>
+        Louis Lefevre
+    </h1>
 
-<h2>
-    Liste des projets
-</h2>
+    <h2>
+        Liste des projets
+    </h2>
 
-<article>
-    <hr>
-    <h3>
-        Quiz builder
-    </h3>
+    <article>
+        <hr>
+        <h3>
+            Quiz builder
+        </h3>
 
-    <div class="container_h">
-        <img src="Images/quiz_builder.PNG" class="popImg container_element">
-        <div class="container_element paragraph">
-            <div class="text">
-                Dans l’objectif de créer une application android de quiz, il faut pour commencer avoir une base de données contenant les informations sur lesquelles les questions vont porter. L’application Quiz builder est donc une interface graphique qui permet de construire cette base de données. La base est constituée d’une seule table contenant la liste des éléments du quiz. Quiz builder permet de gérer plusieurs projets différents. Pour chaque projet sont défini la liste des champs (nom et type) de la table. On peut ajouter des nouvelles entrées à la table et les visualiser sur le côté, pratique notamment pour les images.
+        <div class="container_h">
+            <img src="Images/quiz_builder.PNG" class="popImg container_element_5">
+            <div class="container_element_5 paragraph">
+                <div class="text">
+                    Dans l’objectif de créer une application android de quiz, il faut pour commencer avoir une base de
+                    données contenant les informations sur lesquelles les questions vont porter. L’application Quiz
+                    builder est donc une interface graphique qui permet de construire cette base de données. La base est
+                    constituée d’une seule table contenant la liste des éléments du quiz. Quiz builder permet de gérer
+                    plusieurs projets différents. Pour chaque projet sont défini la liste des champs (nom et type) de la
+                    table. On peut ajouter des nouvelles entrées à la table et les visualiser sur le côté, pratique
+                    notamment pour les images.
+                </div>
             </div>
         </div>
-    </div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                PyQt
-            </li>
-            <li>
-                SQLite
-            </li>
-        </ul>
-    </div>
-</article>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    PyQt
+                </li>
+                <li>
+                    SQLite
+                </li>
+            </ul>
+        </div>
+    </article>
 
-<article>
-    <hr>
-    <h3>
-        Youtube manager
-    </h3>
-    <div class="container_h">
-        <img src="Images/youtube_manager2.PNG" width="50%" class="popImg container_element">
-        <div class="container_element paragraph">
-            <div class="text">
-                L’application Youtube manager est une interface graphique qui permet de s’abonner à des chaines youtube, trier ses abonnements par catégories et télécharger des vidéos youtube. Pour commencer on importe une liste d’abonnement depuis son compte google ou un export généré depuis l’application. Ensuite on tri les chaines youtube par catégories, on peut créer une arborescence personnalisé de catégorie. En cliquant sur les chaines la liste des dernières vidéo s’affiche sur le côté, on a la possibilité de les ouvrir dans un navigateur pour les regarder ou les télécharger. On ajoute aussi des nouveaux abonnement en passant par une fenêtre de recherche. On télécharge aussi des vidéos en copiant l’url dans la fenêtre de téléchargement.
+    <article>
+        <hr>
+        <h3>
+            Youtube manager
+        </h3>
+        <div class="container_h">
+            <img src="Images/youtube_manager2.PNG" width="50%" class="popImg container_element_5">
+            <div class="container_element_5 paragraph">
+                <div class="text">
+                    L’application Youtube manager est une interface graphique qui permet de s’abonner à des chaines
+                    youtube, trier ses abonnements par catégories et télécharger des vidéos youtube. Pour commencer on
+                    importe une liste d’abonnement depuis son compte google ou un export généré depuis l’application.
+                    Ensuite on tri les chaines youtube par catégories, on peut créer une arborescence personnalisé de
+                    catégorie. En cliquant sur les chaines la liste des dernières vidéo s’affiche sur le côté, on a la
+                    possibilité de les ouvrir dans un navigateur pour les regarder ou les télécharger.
+                </div>
             </div>
         </div>
-    </div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                PyQt
-            </li>
-            <li>
-                SQLite
-            </li>
-            <li>
-                Api Youtube v3
-            </li>
-        </ul>
-    </div>
-    
-    <img src="Images/youtube_manager3.PNG" width="250em" class="popImg">
-    <img src="Images/youtube_manager4.PNG" width="250em" class="popImg">
-    <img src="Images/youtube_manager5.PNG" width="250em" class="popImg">
-    <!---->
-</article>
+        <div class="container_h">
+            <div class="container_element_5 paragraph">
+                <div class="text">
+                    On ajoute aussi
+                    des nouveaux abonnement en passant par une fenêtre de recherche. On télécharge aussi des vidéos en
+                    copiant l’url dans la fenêtre de téléchargement.
+                </div>
+            </div>
+            <img src="Images/youtube_manager5.PNG" width="250em" class="popImg container_element_5">
+        </div>
+        <div class="container_h">
+            <img src="Images/youtube_manager3.PNG" width="250em" class="popImg container_element_5">
+            <img src="Images/youtube_manager4.PNG" width="250em" class="popImg container_element_5">
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    PyQt
+                </li>
+                <li>
+                    SQLite
+                </li>
+                <li>
+                    Api Youtube v3
+                </li>
+            </ul>
+        </div>
 
-<article>
-    <hr>
-    <h3>
-        Labyrinth en 3D
-    </h3>
-    <div class="container_h">
-        <img src="Images/laby_3d.PNG" width="50%" class="popImg container_element">
-        <div class="container_element paragraph">
-            <div class="text">
-                Ce programme python génére un fichier 3D .stl, qui est ensuite imprimable par une imprimante 3D. Ensuite on glisse une petite bille métalique à l’intérieur et on essaye de la faire ressortir de l’autre côté. L’image est une vue en coupe, le labyrinthe est totalement caché il faut donc retrouver le chemin à l’aveugle.
+
+        <!---->
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Labyrinthe en 3D
+        </h3>
+        <div class="container_h">
+            <img src="Images/laby_3d.PNG" width="50%" class="popImg container_element_5">
+            <div class="container_element_5 paragraph">
+                <div class="text">
+                    Ce programme python génére un fichier 3D .stl, qui est ensuite imprimable par une imprimante 3D.
+                    Ensuite on glisse une petite bille métalique à l’intérieur et on essaye de la faire ressortir de
+                    l’autre côté. L’image est une vue en coupe, le labyrinthe est totalement caché il faut donc
+                    retrouver le chemin à l’aveugle.
+                </div>
             </div>
         </div>
-    </div>
-</article>
+    </article>
 
-<article>
-    <hr>
-    <h3>
-        Flask
-    </h3>
-    <img src="Images/flask_kems.PNG" width="500em" class="popImg container_element">
-    <img src="Images/flask_kems2.PNG" width="500em" class="popImg container_element">
-    <div class="text">
-        Ce programme est le premier site que j’ai réalisé avec le framework python Flask. Ce projet n’est pas du tout terminé. L’objectif était de créer un jeu  multijoueur en utilisant le système de socket. Ce qui à été réalisé sont les étapes de création d’une partie et d’accés à une partie. Les joueurs choisissent leur équipe et indiquent s’ils sont prêt. Lorsque tout le monde est prêt la partie est lancé.
-    <div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Falsk
-            </li>
-            <li>
-                MySql
-            </li>
-            <li>
-                Bootstrap
-            </li>
-        </ul>
-    </div>
-</article>
+    <article>
+        <hr>
+        <h3>
+            Flask
+        </h3>
+        <div class="container_h">
+            <img src="Images/flask_kems.PNG" width="500em" class="popImg container_element_5">
+            <div class="container_element_5 paragraph">
+                <div class="text">
+                    Ce programme est le premier site que j’ai réalisé avec le framework python Flask. Ce projet n’est
+                    pas du tout terminé. L’objectif était de créer un jeu multijoueur en utilisant le système de socket.
+                    Ce qui à été réalisé sont les étapes de création d’une partie et d’accés à une partie. Les joueurs
+                    choisissent leur équipe et indiquent s’ils sont prêt. Lorsque tout le monde est prêt la partie est
+                    lancé.
+                </div>
+            </div>
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    Falsk
+                </li>
+                <li>
+                    MySql
+                </li>
+                <li>
+                    Bootstrap
+                </li>
+            </ul>
+        </div>
+    </article>
 
-<article>
-    <hr>
-    <h3>
-        Découper les video d’HugoDecrypt
-    </h3>
-    <div class="container_h">
-        <img src="Images/bot_hugo.gif" width="500em" class="popImg container_element">
-        <div class="container_element paragraph">
-            <div class="text">
-                Hugo Décrypte est un youtubeur qui tout les jours donne les principales informations d’actualités. Ses vidéos sont découpées en plusieurs sujets dont le titre est indiqué dans un bandeau en haut à gauche. Avant que n’apparaissent le système de chapitrage (qui affiche les sections de la vidéo dans la bar de progression) les gens donnaient dans les commentaires les timecodes de chaque sections de la vidéo. L’idée est d’automatiser la génération d’un commentaire avec les timecodes de chaque section à la publication de la vidéo. 
-                Ensuite il reste à générer la liste des sections avec les timecodes en face et à publier le commentaire sous la vidéo.
+    <article>
+        <hr>
+        <h3>
+            Découper les videos d’HugoDecrypt
+        </h3>
+        <div class="container_h">
+            <img src="Images/bot_hugo.gif" width="500em" class="popImg container_element_3">
+            <div class="container_element_7 paragraph">
+                <div class="text">
+                    Hugo Décrypte est un youtubeur qui tout les jours donne les principales informations d’actualités.
+                    Ses vidéos sont découpées en plusieurs sujets dont le titre est indiqué dans un bandeau en haut à
+                    gauche. Avant que n’apparaissent le système de chapitrage (qui affiche les sections de la vidéo dans
+                    la bar de progression) les gens donnaient dans les commentaires les timecodes de chaque sections de
+                    la vidéo. L’idée est d’automatiser la génération d’un commentaire avec les timecodes de chaque
+                    section à la publication de la vidéo.
+                </div>
+            </div>
+        </div>
+        <div class="container_h">
+            <div class="container_element_10 paragraph">
+                <div class="text">
+                    Ensuite il reste à générer la liste des sections avec les timecodes en face et à publier le
+                    commentaire sous la vidéo.
+                    <ul>
+                        <li>
+                            Le programme scrute donc la publication d’une nouvelle vidéo en utilisant l’api youtube
+                        </li>
+                        <li>
+                            La vidéo est téléchargé pour être analysé
+                        </li>
+                        <li>
+                            La vidéo est échantillonnée pour diminuer le nombre d’image à analyser
+                        </li>
+                        <li>
+                            La partie de l’image contenant le titre de la section est extrait pour ensuite être binarisé
+                            et filtré
+                        </li>
+                        <li>
+                            Le text est détecté en utilsant le progamme Pytesseract
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    Api Youtube v3
+                </li>
+                <li>
+                    Pytube
+                </li>
+                <li>
+                    Pytesseract
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Le kems
+        </h3>
+        <div class="container_h">
+            <div class="container_element_10 paragraph">
+                <div class="text">
+                    Ce jeux reprend le principe d’un jeu, le kems. Les rêgles sont les suivantes :
+                    <ul>
+                        <li>Il y a un nombre paire de joureurs avec 4 cartes chacun</li>
+                        <li>Les joueurs en face l’un de l’autre sont coéquipiés</li>
+                        <li>Il faut échanger ses cartes avec les 4 cartes du centre dans l’objectif d’avoir 4 cartes de
+                            même
+                            valeur (c’est ce qu’on appel un kems)</li>
+                        <li>Si plus personne n’échange de carte elles sont remplacées</li>
+                        <li>Lorsqu’un joueur a un kems il doit le faire comprendre à son coéquipié sans que les autres
+                            ne le
+                            devine</li>
+                        <li>Si un joueur pense que son coéquipié a un kems il dit "Kems !" voir "Double kems" s’il a
+                            aussi
+                            lui même un kems</li>
+                        <li>Si un joueur pense qu’un adversaire a un kems il annonce "Contre kems !"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container_h">
+            <img src="Images/kems_3.gif" class="popImg container_element_5">
+            <div class="container_v container_element_5">
+                <img src="Images/kems_serveur.PNG" class="popImg container_element_10">
+                <div class="container_element_10 paragraph">
+                    <div class="text">
+                        Dans cette version informatique du kems les joueurs communiquent par visio conférences. Le
+                        programme
+                        est
+                        composé de plusieurs clients et d’un serveur central. Les communications sont faite en passant
+                        par
+                        des
+                        sockets.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    Sockets
+                </li>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Les commentaires youtube
+        </h3>
+        <div class="container_h">
+            <img src="Images/Comment_viewer.PNG" class="popImg container_element_7">
+            <div class="container_element_3 paragraph">
+                <div class="text">
+                    Ce programme permet de téléchager les commentaires youtube sous les vidéos puis de les parcourir
+                    pour
+                    sauvegarder ceux qui retiennent l’attention. Les trois colonnes sur la droites permettent de trier
+                    par
+                    chaine youtube, par vidéo et par conversation. À gauche on peu voir la conversation selectionnées.
+                    En
+                    dessous se trouve la liste des conversation sauvegardées.
+                </div>
+            </div>
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    PyQt
+                </li>
+                <li>
+                    Youtube API
+                </li>
+                <li>
+                    youtube-comment-downloader
+                </li>
+            </ul>
+        </div>
+    </article>
+
+
+    <article>
+        <hr>
+        <h3>
+            Quiz départements
+        </h3>
+        <div class="container_h">
+            <img src="Images/quiz_departements.png" class="popImg container_element_2">
+            <div class="container_element_8 paragraph">
+                <div class="text">
+                    Ce projet est une application android qui permet de réviser les numéros des départements de france
+                    métropolitaine. C’est un quiz qui demande le numéro pour un département donné, le nom et
+                    l’emplacement
+                    géographique sont affichés. Si une erreur est faite alors on doit tout recommencer, le but est de
+                    pouvoir répondre correctement pour les 96 numéros d’une seule traite.
+                </div>
+            </div>
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    Andoid
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            25case
+        </h3>
+        <div class="container_h">
+            <div class="container_element_8 paragraph">
+                <div class="text">
+                    Ce jeu est un mix entre le rubik’s cube et le taquin. On déplace seulement le numéro 25. Le but est
+                    de
+                    remettre dans l’ordre les numéros de la grille. Lorsqu’un numéro est correctement placé il s’affiche
+                    en
+                    jaune.
+                </div>
+            </div>
+            <img src="Images/25case.png" class="popImg container_element_2">
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    Andoid
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Maxicase
+        </h3>
+        <div class="container_h">
+            <img src="Images/maxicase.png" class="popImg container_element_2">
+            <div class="container_element_8 paragraph">
+                <div class="text">
+                    Les rêgles sont compliquées
+                </div>
+            </div>
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    Andoid
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Travel Star
+        </h3>
+        <div class="container_h">
+            <img src="Images/travel_star.gif" class="popImg" />
             <div>
+                Vaisseau en orbite autour d’une planète. Passe de planète en planète.
+            </div>
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Tronio
+        </h3>
+        <div class="container_h">
+            <img src="Images/tronio_game.gif" class="popImg" />
+            <div>
+                Jeu tron en 2D.
+            </div>
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Labyrinthe
+        </h3>
+
+        <img src="Images/laby.gif" width="350em" class="popImg">
+        <img src="Images/laby2.gif" width="500em" class="popImg">
+        <div class="text">
+            Fusion aléatoire de chemins. Généralisation en 4D
+            <div>
+                <div class="toolList">
+                    Outils:
+                    <ul>
+                        <li>
+                            Tkinter
+                        </li>
+                    </ul>
+                </div>
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Résolution rubik’s cube
+        </h3>
+        <div class="container_h">
+            <img src="Images/cube_resolution.gif" class="popImg" />
+            <div>
+                Tester des formules de rubik’s cube.
+            </div>
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Supermorpion
+        </h3>
+
+        <div class="container_h">
+            <img src="Images/supermorpion.gif" class="popImg" />
+            <div>
+                Morpion plus plus.
+            </div>
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Le jeu des 4 couleurs
+        </h3>
+        <div class="container_h">
+            <img src="Images/4couleurs.gif" width="35%" class="popImg" />
+            <div style="width: 65%;">
+                Il existe un théoreme des quatres couleurs.
+            </div>
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Automate cellulaire
+        </h3>
+
+        <img src="Images/auto_cell.gif" width="350em" class="popImg" />
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Le jeux de la vie
+        </h3>
+
+        <img src="Images/conway.gif" width="350em" class="popImg">
+        <img src="Images/conway2.gif" width="350em" class="popImg">
+
         <div>
-    </div>    
-    <ul>
-        <li>
-            Le programme scrute donc la publication d’une nouvelle vidéo en utilisant l’api youtube
-        </li>
-        <li>
-            La vidéo est téléchargé pour être analysé
-        </li>
-        <li>
-            La vidéo est échantillonnée pour diminuer le nombre d’image à analyser
-        </li>
-        <li>
-            La partie de l’image contenant le titre de la section est extrait pour ensuite être binarisé et filtré
-        </li>
-        <li>
-            Le text est détecté en utilsant le progamme Pytesseract
-        </li>
-    </ul>
+            <div>
+                Outils:
+                <ul>
+                    <li>
+                        Tkinter
+                    </li>
+                </ul>
+            </div>
+    </article>
 
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Api Youtube v3
-            </li>
-            <li>
-                Pytube
-            </li>
-            <li>
-                Pytesseract
-            </li>
-        </ul>
-    </div>
-</article>
+    <article>
+        <hr>
+        <h3>
+            jeu de la pizza
+        </h3>
 
-<article>
-    <hr>
-    <h3>
-        Le kems 
-    </h3>
-    <img src="Images/kems_3.gif" width="500em" class="popImg">
-    <img src="Images/kems_serveur.PNG" width="500em" class="popImg">
+        <img src="Images/pizza.gif" width="350em" class="popImg" />
 
-    <div class="text">
-        Ce jeux reprend le principe d’un jeu, le kems. Les rêgles sont les suivantes :
-        <ul>
-            <li>Il y a un nombre paire de joureurs avec 4 cartes chacun</li>
-            <li>Les joueurs en face l’un de l’autre sont coéquipiés</li>
-            <li>Il faut échanger ses cartes avec les 4 cartes du centre dans l’objectif d’avoir 4 cartes de même valeur (c’est ce qu’on appel un kems)</li>
-            <li>Si plus personne n’échange de carte elles sont remplacées</li>
-            <li>Lorsqu’un joueur a un kems il doit le faire comprendre à son coéquipié sans que les autres ne le devine</li>
-            <li>Si un joueur pense que son coéquipié a un kems il dit "Kems !" voir "Double kems" s’il a aussi lui même un kems</li>
-            <li>Si un joueur pense qu’un adversaire a un kems il annonce "Contre kems !"</li>
-        </ul>
-        Dans cette version informatique du kems les joueurs communiquent par visio conférences. Le programme est composé de plusieurs clients et d’un serveur central. Les communications sont faite en passant par des sockets.
-    <div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Sockets
-            </li>
-            <li>
-                Tkinter
-            </li>
-        </ul>
-    </div>
-</article>
-
-<article>
-    <h3>
-        Les commentaires youtube
-    </h3>
-    <div class="container_h">
-        <img src="Images/Comment_viewer.PNG" width="70%" class="popImg">
-        <p style="width: 30%;">
-            Ce programme permet de téléchager les commentaires youtube sous les vidéos puis de les parcourir pour sauvegarder ceux qui retiennent l’attention. Les trois colonnes sur la droites permettent de trier par chaine youtube, par vidéo et par conversation. À gauche on peu voir la conversation selectionnées. En dessous se trouve la liste des conversation sauvegardées.
         <div>
-    </div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                PyQt
-            </li>
-            <li>
-                Youtube API
-            </li>
-            <li>
-                youtube-comment-downloader
-            </li>
-        </ul>
-    </div>
-</article>
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
 
+    <article>
+        <hr>
+        <h3>
+            Calcul des lentilles
+        </h3>
+        <img src="Images/lentille.PNG" width="400em" class="popImg" />
 
-<article>
-    <h3>
-        Quiz départements
-    </h3>
-    <div class="container_h">
-        <img src="Images/quiz_departements.png" width="20%" class="popImg">
-        <p style="width: 80%;">
-            Ce projet est une application android qui permet de réviser les numéros des départements de france métropolitaine. C’est un quiz qui demande le numéro pour un département donnée, le nom et l’emplacement géographique sont affichés. Si une erreur est faite alors on doit tout recommencer, le but est de pouvoir répondre correctement pour les 96 numéros d’une seule traite. 
         <div>
-    </div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Andoid
-            </li>
-        </ul>
-    </div>
-</article>
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
 
-<article>
-    <h3>
-        25case
-    </h3>
-    <div class="container_h">
-        <img src="Images/25case.png" width="20%" class="popImg">
-        <p style="width: 80%;">
-            Ce jeu est un mix entre le rubik’s cube et le taquin. On déplace seulement le numéro 25. Le but est de remettre dans l’ordre les numéros de la grille. Lorsqu’un numéro est correctement placé il s’affiche en jaune.
+    <article>
+        <hr>
+        <h3>
+            Outil pour calculer l’angle de réfraction
+        </h3>
+
+        <img src="Images/refraction.gif" width="350em" class="popImg">
+
         <div>
-    </div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Andoid
-            </li>
-        </ul>
-    </div>
-</article>
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
 
-<article>
-    <h3>
-        Maxicase
-    </h3>
-    <div class="container_h">
-        <img src="Images/maxicase.png" width="20%" class="popImg">
-        <p style="width: 80%;">
-            Les rêgles sont compliquées
+    <article>
+        <hr>
+        <h3>
+            Bang
+        </h3>
+
+        <img src="Images/bang.gif" width="350em" class="popImg" />
+
         <div>
-    </div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Andoid
-            </li>
-        </ul>
-    </div>
-</article>
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
 
-<article>
-    <h3>
-        Travel Star
-    </h3>
-    <div class="container_h">
-        <img src="Images/travel_star.gif" width="35%" class="popImg"/>
-        <p style="width: 65%;">
-            Vaisseau en orbite autour d’une planète. Passe de planète en planète.
+    <article>
+        <hr>
+        <h3>
+            train
+        </h3>
+        <img src="Images/train.gif" width="400em" class="popImg" />
+
         <div>
-    </div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Tkinter
-            </li>
-        </ul>
-    </div>
-</article>
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
 
-<article>
-    <h3>
-        Tronio
-    </h3>
-    <div class="container_h">
-        <img src="Images/tronio_game.gif" width="40%" class="popImg"/>
-        <p style="width: 60%;">
-            Jeu tron en 2D.
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            Cube timer
+        </h3>
+
+        <img src="Images/cube_timer.PNG" width="500em" class="popImg" />
+
         <div>
-    </div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Tkinter
-            </li>
-        </ul>
-    </div>
-</article>
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
 
-<article>
-    <h3>
-        Labyrinthe
-    </h3>
+    <article>
+        <hr>
+        <h3>
+            Gravity
+        </h3>
 
-    <img src="Images/laby.gif"  width="350em" class="popImg">
-    <img src="Images/laby2.gif"  width="500em" class="popImg">
-    <div class="text">
-        Fusion aléatoire de chemins. Généralisation en 4D
-    <div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Tkinter
-            </li>
-        </ul>
-    </div>
-</article>
+        <img src="Images/gravity.gif" width="400em" class="popImg" />
+        On controle le cube, on peut sauter sur le trampoline
 
-<article>
-    <h3>
-        Résolution rubik’s cube
-    </h3>
-    <div class="container_h">
-        <img src="Images/cube_resolution.gif" width="75%" class="popImg"/>
-        <p style="width: 25%;">
-            Tester des formules de rubik’s cube.
         <div>
-    </div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Tkinter
-            </li>
-        </ul>
-    </div>
-</article>
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
 
-<article>
-    <h3>
-        Supermorpion
-    </h3>
-
-    <div class="container_h">
-        <img src="Images/supermorpion.gif" width="35%" class="popImg"/>
-        <p style="width: 65%;">
-            Morpion plus plus.
+    <article>
+        <hr>
+        <h3>
+            Systeme solaire
+        </h3>
+        <img src="Images/systeme.gif" width="400em" class="popImg" />
+        Planète en rotation autour du soleil
         <div>
-    </div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Tkinter
-            </li>
-        </ul>
-    </div>
-</article>
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
 
-<article>
-    <h3>
-        Le jeu des 4 couleurs
-    </h3>
-    <div class="container_h">
-        <img src="Images/4couleurs.gif" width="35%" class="popImg"/>
-        <p style="width: 65%;">
-            Il existe un théoreme des quatres couleurs.
+    <article>
+        <hr>
+        <h3>
+            2048
+        </h3>
+
+        <img src="Images/2048_anim.gif" width="350em" class="popImg">
+
+        Reproduction du fameux jeu 2048 en
+        python avec Tkinter
+
         <div>
-    </div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Tkinter
-            </li>
-        </ul>
-    </div>
-</article>
-
-<article>
-    <h3>
-        Automate cellulaire
-    </h3>
-
-    <img src="Images/auto_cell.gif" width="350em" class="popImg"/>
-    <div class="text">
-
-    <div>
-    <div class="toolList">
-        Outils:
-        <ul>
-            <li>
-                Tkinter
-            </li>
-        </ul>
-    </div>
-</article>
-
-
-<h3>
-    Le jeux de la vie
-</h3>
-
-<img src="Images/conway.gif"  width="350em" class="popImg">
-<img src="Images/conway2.gif"  width="350em" class="popImg">
-<div class="text">
-
-<div>
-<div>
-    Outils:
-    <ul>
-        <li>
-            Tkinter
-        </li>
-    </ul>
-</div>
-
-<h3>
-    jeu de la pizza
-</h3>
-
-<img src="Images/pizza.gif" width="350em" class="popImg"/>
-<div class="text">
-
-<div>
-<div>
-    Outils:
-    <ul>
-        <li>
-            Tkinter
-        </li>
-    </ul>
-</div>
-
-<h3>
-    Calcul des lentilles
-</h3>
-<img src="Images/lentille.PNG" width="400em" class="popImg"/>
-<div class="text">
-
-<div>
-<div>
-    Outils:
-    <ul>
-        <li>
-            Tkinter
-        </li>
-    </ul>
-</div>
-
-<h3>
-    Outil pour calculer l’angle de réfraction
-</h3>
-
-<img src="Images/refraction.gif" width="350em" class="popImg">
-<div class="text">
-
-<div>
-<div>
-    Outils:
-    <ul>
-        <li>
-            Tkinter
-        </li>
-    </ul>
-</div>
-
-<h3>
-    Bang
-</h3>
-
-<img src="Images/bang.gif" width="350em" class="popImg"/>
-<div class="text">
-
-<div>
-<div>
-    Outils:
-    <ul>
-        <li>
-            Tkinter
-        </li>
-    </ul>
-</div>
-
-<h3>
-    train
-</h3>
-<img src="Images/train.gif" width="400em" class="popImg"/>
-<div class="text">
-
-<div>
-<div>
-    Outils:
-    <ul>
-        <li>
-            Tkinter
-        </li>
-    </ul>
-</div>
-
-
-<h3>
-    Cube timer
-</h3>
-
-<img src="Images/cube_timer.PNG" width="500em" class="popImg"/>
-<div class="text">
-
-<div>
-<div>
-    Outils:
-    <ul>
-        <li>
-            Tkinter
-        </li>
-    </ul>
-</div>
-
-
-<h3>
-    Gravity
-</h3>
-
-<img src="Images/gravity.gif" width="400em" class="popImg"/>
-<div class="text">
-    On control le cube, on peut sauter sur le trampoline
-<div>
-
-<div>
-    Outils:
-    <ul>
-        <li>
-            Tkinter
-        </li>
-    </ul>
-</div>
-
-<h3>
-    Systeme solaire
-</h3>
-<img src="Images/systeme.gif" width="400em" class="popImg"/>
-<div class="text">
-    Planète en rotation autour du soleil
-<div>
-<div>
-    Outils:
-    <ul>
-        <li>
-            Tkinter
-        </li>
-    </ul>
-</div>
-
-
-
-<h3>
-    2048
-</h3>
-
-<img src="Images/2048_anim.gif" width="350em" class="popImg">
-
-<div class="text">
-    Reproduction du fameux jeu 2048 en python avec Tkinter
-<div>
-
-<div>
-    Outils:
-    <ul>
-        <li>
-            Tkinter
-        </li>
-    </ul>
-</div>
-
+            Outils:
+            <ul>
+                <li>
+                    Tkinter
+                </li>
+            </ul>
+        </div>
+    </article>
 
 </body>
 
@@ -753,7 +966,7 @@
     // Get the image and insert it inside the modal - use its "alt" text as a caption
     var images = document.getElementsByClassName("popImg");
     Array.from(images).forEach(img => {
-        img.onclick = function(){
+        img.onclick = function () {
             var modalImg = document.getElementById("img01");
             var captionText = document.getElementById("caption");
             var modal = document.getElementById("imgModal");
@@ -767,11 +980,12 @@
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    span.onclick = function () {
         var modal = document.getElementById("imgModal");
         modal.style.display = "none";
-    } 
+    }
 
-    
+
 </script>
+
 </html>
