@@ -273,10 +273,59 @@
         Liste des projets
     </h2>
 
+    
     <article>
         <hr>
         <h3>
-            MovieGuessr
+            #29 Patron Horloge
+        </h3>
+
+        <div class="container_h">
+            <div class="container_element_10 paragraph">
+                <div class="text">
+                    Les horloges de la marque QLocktwo ont un affichage à base de lettres, celles ci s’éclairent pour y afficher l’heure.
+                    Je me suis donné pour projet d’en fabriquer une moi même à base de bois, de rubans de led et d’une raspberry pi.
+                    Pour ce qui est du programme d’affichage des lettres, j’ai besoin de savoir quelles lettres afficher pour quel horaire.
+                    Pour cela j’ai developpé une interface graphique pour faire le paramétrage de l’affichage.
+                </div>
+            </div>
+        </div>
+
+        <div class="container_h">
+            <img src="Images/horloge_1.png" class="popImg container_element_6">
+            <div class="container_element_4 paragraph">
+                <div class="text">
+                    Le logiciel se présente de la façon suivante: au centre on défini l’emplacement des lettres.
+                    Sur la droite il y a plusieurs menu. Dans la partie simulation on visualise le résultat pour chaque horaire,
+                    soit en faisant défiler automatiquement les heures soit manuellement. Le calcul des adresses attribut
+                    de gauche à droite et de haut en bas les numéros d’adresse de led.
+                    Les groupes définissent un ensemble de case. Pour chaque groupe on choisi une regex qui détermine à quel horaire
+                    le groupe doit s’afficher. Lorsque le paramétrage est correct on peut alors exporter le projet vers un fichier
+                    texte, celui ci contient la liste des adresses des led à allumer pour chaque horaires.
+                </div>
+            </div>
+        </div>
+        <div class="container_h">
+            <div class="container_v container_element_4">
+                <img src="Images/horloge_2.png" class="popImg container_element_10">
+                <img src="Images/horloge_3.png" class="popImg container_element_10">
+            </div>
+            <img src="Images/horloge_4.gif" class="popImg container_element_6">
+        </div>
+        <div class="toolList">
+            Outils:
+            <ul>
+                <li>
+                    PyQt
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article>
+        <hr>
+        <h3>
+            #28 MovieGuessr
         </h3>
 
         <div class="container_h">
@@ -306,7 +355,7 @@
     <article>
         <hr>
         <h3>
-            Quiz builder
+            #27 Quiz builder
         </h3>
 
         <div class="container_h">
@@ -339,7 +388,7 @@
     <article>
         <hr>
         <h3>
-            Youtube manager
+            #26 Youtube manager
         </h3>
         <div class="container_h">
             <img src="Images/youtube_manager2.PNG" width="50%" class="popImg container_element_5">
@@ -365,8 +414,10 @@
             <img src="Images/youtube_manager5.PNG" width="250em" class="popImg container_element_5">
         </div>
         <div class="container_h">
-            <img src="Images/youtube_manager3.PNG" width="250em" class="popImg container_element_5">
-            <img src="Images/youtube_manager4.PNG" width="250em" class="popImg container_element_5">
+            <div class="container_v container_element_5">
+                <img src="Images/youtube_manager3.PNG" class="popImg container_element_10">
+            </div>
+            <img src="Images/youtube_manager4.PNG" class="popImg container_element_5">
         </div>
         <div class="toolList">
             Outils:
@@ -390,7 +441,7 @@
     <article>
         <hr>
         <h3>
-            Labyrinthe en 3D
+            #25 Labyrinthe en 3D
         </h3>
         <div class="container_h">
             <img src="Images/laby_3d.PNG" width="50%" class="popImg container_element_5">
@@ -408,7 +459,7 @@
     <article>
         <hr>
         <h3>
-            Flask
+            #24 Flask
         </h3>
         <div class="container_h">
             <img src="Images/flask_kems.PNG" width="500em" class="popImg container_element_5">
@@ -441,10 +492,10 @@
     <article>
         <hr>
         <h3>
-            Découper les videos d’HugoDecrypt
+            #23 Découper les videos d’HugoDecrypt
         </h3>
         <div class="container_h">
-            <img src="Images/bot_hugo.gif" width="500em" class="popImg container_element_3">
+            <img src="Images/bot_hugo.gif" class="popImg container_element_3">
             <div class="container_element_7 paragraph">
                 <div class="text">
                     Hugo Décrypte est un youtubeur qui tout les jours donne les principales informations d’actualités.
@@ -502,7 +553,7 @@
     <article>
         <hr>
         <h3>
-            Le kems
+            #22 Le kems
         </h3>
         <div class="container_h">
             <div class="container_element_10 paragraph">
@@ -560,7 +611,7 @@
     <article>
         <hr>
         <h3>
-            Les commentaires youtube
+            #21 Les commentaires youtube
         </h3>
         <div class="container_h">
             <img src="Images/Comment_viewer.PNG" class="popImg container_element_7">
@@ -596,7 +647,7 @@
     <article>
         <hr>
         <h3>
-            Quiz départements
+            #20 Quiz départements
         </h3>
         <div class="container_h">
             <img src="Images/quiz_departements.png" class="popImg container_element_2">
@@ -623,7 +674,7 @@
     <article>
         <hr>
         <h3>
-            25case
+            #19 25case
         </h3>
         <div class="container_h">
             <div class="container_element_8 paragraph">
@@ -650,7 +701,7 @@
     <article>
         <hr>
         <h3>
-            Maxicase
+            #18 Maxicase
         </h3>
         <div class="container_h">
             <img src="Images/maxicase.png" class="popImg container_element_2">
@@ -673,7 +724,7 @@
     <article>
         <hr>
         <h3>
-            Travel Star
+            #17 Travel Star
         </h3>
         <div class="container_h">
             <img src="Images/travel_star.gif" class="popImg" />
@@ -696,7 +747,7 @@
     <article>
         <hr>
         <h3>
-            Tronio
+            #16 Tronio
         </h3>
         <div class="container_h">
             <img src="Images/tronio_game.gif" class="popImg" />
@@ -719,7 +770,7 @@
     <article>
         <hr>
         <h3>
-            Labyrinthe
+            #15 Labyrinthe
         </h3>
         <div class="container_h">
             <img src="Images/laby.gif" class="popImg container_element_5" >
@@ -745,7 +796,7 @@
     <article>
         <hr>
         <h3>
-            Résolution rubik’s cube
+            #14 Résolution rubik’s cube
         </h3>
         <div class="container_h">
             <img src="Images/cube_resolution.gif" class="popImg container_element_5" />
@@ -768,7 +819,7 @@
     <article>
         <hr>
         <h3>
-            Supermorpion
+            #13 Supermorpion
         </h3>
 
         <div class="container_h">
@@ -792,7 +843,7 @@
     <article>
         <hr>
         <h3>
-            Le jeu des 4 couleurs
+            #12 Le jeu des 4 couleurs
         </h3>
         <div class="container_h">
             <img src="Images/4couleurs.gif" width="35%" class="popImg container_element_3" />
@@ -814,7 +865,7 @@
     <article>
         <hr>
         <h3>
-            Automate cellulaire
+            #11 Automate cellulaire
         </h3>
 
         <div class="container_h">
@@ -840,7 +891,7 @@
     <article>
         <hr>
         <h3>
-            Le jeux de la vie
+            #10 Le jeux de la vie
         </h3>
 
         <div class="container_h">
@@ -869,7 +920,7 @@
     <article>
         <hr>
         <h3>
-            jeu de la pizza
+            #9 jeu de la pizza
         </h3>
 
         <div class="container_h">
@@ -894,7 +945,7 @@
     <article>
         <hr>
         <h3>
-            Calcul des lentilles
+            #8 Calcul des lentilles
         </h3>
         <div class="container_h">
             <img src="Images/lentille.PNG" class="popImg container_element_4" />
@@ -919,7 +970,7 @@
     <article>
         <hr>
         <h3>
-            Outil pour calculer l’angle de réfraction
+            #7 Outil pour calculer l’angle de réfraction
         </h3>
 
         <div class="container_h">
@@ -944,7 +995,7 @@
     <article>
         <hr>
         <h3>
-            Bang
+            #6 Bang
         </h3>
 
         <div class="container_h">
@@ -970,7 +1021,7 @@
     <article>
         <hr>
         <h3>
-            train
+            #5 train
         </h3>
         <div class="container_h">
             <img src="Images/train.gif" class="popImg container_element_4" />
@@ -995,7 +1046,7 @@
     <article>
         <hr>
         <h3>
-            Cube timer
+            #4 Cube timer
         </h3>
         <div class="container_h">
             <div class="container_element_5 paragraph">
@@ -1019,7 +1070,7 @@
     <article>
         <hr>
         <h3>
-            Gravity
+            3# Gravity
         </h3>
 
         <div class="container_h">
@@ -1045,7 +1096,7 @@
     <article>
         <hr>
         <h3>
-            Systeme solaire
+            #2 Systeme solaire
         </h3>
         <div class="container_h">
             <div class="container_element_6 paragraph">
@@ -1069,7 +1120,7 @@
     <article>
         <hr>
         <h3>
-            2048
+            #1 2048
         </h3>
         <div class="container_h">
             <img src="Images/2048_anim.gif" class="popImg container_element_3" />
